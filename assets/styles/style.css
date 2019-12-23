@@ -1,0 +1,7 @@
+.hasError{
+    background-color: red;
+    color: white;
+}
+h2{
+    color: blue !important;
+}

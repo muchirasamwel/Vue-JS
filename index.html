@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+<body>
+    <div id="app">
+        {{message}}
+        <div v-html="rawHtml"> </div>
+        <hr>
+        <!--        class Binding -->
+
+        <div v-bind:class="{ hasError: error}" @click="toggleError">
+            <h2>Class Binding</h2>
+            <h1>SMB TESTS</h1>
+            <h3>Vue Works</h3>
+            <h4>Vue Is also Awesome</h4>
+        </div>
+        <hr>
+        <!--        Style binding -->
+
+        <div v-bind:style="{color:'red',border:'2px solid black'}">
+            <h2>Style Binding</h2>
+            <h1>Hey Feels like am Using inline Style Here</h1>
+            <h3>Look what do you think </h3>
+            <h4>Dont mind</h4>
+        </div>
+        <hr>
+            <!--        Conditional rendering-->
+
+        <div >
+            <h2>Conditional Rendering</h2>
+            <div v-if="lovevue">
+                <h1 >SMB Declared Vue DOPE </h1>
+                What a Useful Framework
+            </div>
+            <div v-else>
+                <h1 >Vue sucks 😢</h1>
+                <p>Who designed this useless Stuff</p>
+            </div>
+            <div v-show="lovevue">
+                <h3>Thank you for choosing Vue</h3>
+            </div>
+        </div>
+        <hr>
+        <!--   Vue Lists     -->
+        <div>
+            <h2>Vue List</h2>
+            <h3> Skills List</h3>
+            <ol>
+                <li v-for="skill in myskills">{{skill.skillname}}</li>
+            </ol>
+        </div>
+        <hr>
+        <!-- Events Handling  -->
+        <div>
+            <h2>Events Handling</h2>
+            <p>Clicks!  {{clicks}}</p>
+            <p>Hovers!  {{hovers}}</p>
+            <button v-on:click="buttonClicked" v-on:mouseover="buttonHovered">Click Here</button>
+            <input type="text" v-on:keyup.enter="submitInfo">
+        </div>
+        <hr>
+        <!--  Form inputs binding     -->
+        <div>
+            <h2>Form Inputs Binding</h2>
+            Please enter your name
+            <input v-model="name" >
+            <p>You are <span v-bind:style="{color:'red','font-weight':'bold'}">{{ name }}</span> right ?</p>
+        </div>
+
+    </div>
+</body>
+<script src="assets/js/vue.js"></script>
+<script src="assets/js/main.js"></script>
+</html>
